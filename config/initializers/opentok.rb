@@ -1,0 +1,3 @@
+#OTSDK = OpenTok::OpenTokSDK.new ENV['TOKBOX_KEY'], ENV['TOKBOX_SECRET']
+OTSDK = OpenTok::OpenTok.new "45039752", "ed41dc38ceacfb9100a2f4a961b8334e2895d157"
+

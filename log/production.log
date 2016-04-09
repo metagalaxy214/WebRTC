@@ -1,0 +1,99 @@
+I, [2014-10-24T15:26:55.098921 #22360]  INFO -- : Migrating to DeviseCreateUsers (20141021183216)
+I, [2014-10-24T15:26:55.396926 #22360]  INFO -- : Migrating to AddNameToUsers (20141023063141)
+I, [2014-10-24T15:26:55.484000 #22360]  INFO -- : Migrating to AddOnlineToUsers (20141023064032)
+I, [2014-10-24T15:26:55.492416 #22360]  INFO -- : Migrating to CreateMeetings (20141023072714)
+I, [2014-10-24T15:26:55.515098 #22360]  INFO -- : Migrating to AddChannelToMeeting (20141023073742)
+I, [2014-10-24T15:29:10.680039 #22473]  INFO -- : Started GET "/" for 127.0.0.1 at 2014-10-24 15:29:10 +0200
+I, [2014-10-24T15:29:10.791984 #22473]  INFO -- : Processing by ContactsController#index as HTML
+I, [2014-10-24T15:29:10.824552 #22473]  INFO -- : Completed 401 Unauthorized in 32ms
+I, [2014-10-24T15:29:11.398882 #22473]  INFO -- : Started GET "/users/sign_in" for 127.0.0.1 at 2014-10-24 15:29:11 +0200
+I, [2014-10-24T15:29:11.403474 #22473]  INFO -- : Processing by Devise::SessionsController#new as HTML
+I, [2014-10-24T15:29:11.498022 #22473]  INFO -- :   Rendered /root/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/devise-3.2.0/app/views/devise/shared/_links.erb (1.7ms)
+I, [2014-10-24T15:29:11.500034 #22473]  INFO -- :   Rendered /root/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/devise-3.2.0/app/views/devise/sessions/new.html.erb within layouts/devise (46.5ms)
+I, [2014-10-24T15:29:11.508619 #22473]  INFO -- :   Rendered layouts/_header.html.erb (0.8ms)
+I, [2014-10-24T15:29:11.509492 #22473]  INFO -- :   Rendered layouts/_footer.html.erb (0.3ms)
+I, [2014-10-24T15:29:11.509785 #22473]  INFO -- : Completed 200 OK in 106ms (Views: 62.5ms | ActiveRecord: 8.0ms)
+I, [2014-10-24T15:29:15.106233 #22473]  INFO -- : Started GET "/" for 127.0.0.1 at 2014-10-24 15:29:15 +0200
+I, [2014-10-24T15:29:15.107464 #22473]  INFO -- : Processing by ContactsController#index as HTML
+I, [2014-10-24T15:29:15.110661 #22473]  INFO -- : Completed 401 Unauthorized in 3ms
+I, [2014-10-24T15:29:15.122134 #22473]  INFO -- : Started GET "/users/sign_in" for 127.0.0.1 at 2014-10-24 15:29:15 +0200
+I, [2014-10-24T15:29:15.126170 #22473]  INFO -- : Processing by Devise::SessionsController#new as HTML
+I, [2014-10-24T15:29:15.140787 #22473]  INFO -- :   Rendered /root/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/devise-3.2.0/app/views/devise/shared/_links.erb (0.7ms)
+I, [2014-10-24T15:29:15.141476 #22473]  INFO -- :   Rendered /root/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/devise-3.2.0/app/views/devise/sessions/new.html.erb within layouts/devise (9.9ms)
+I, [2014-10-24T15:29:15.145502 #22473]  INFO -- :   Rendered layouts/_header.html.erb (0.4ms)
+I, [2014-10-24T15:29:15.147660 #22473]  INFO -- :   Rendered layouts/_footer.html.erb (0.1ms)
+I, [2014-10-24T15:29:15.148072 #22473]  INFO -- : Completed 200 OK in 22ms (Views: 16.9ms | ActiveRecord: 0.0ms)
+I, [2014-10-24T15:29:26.250103 #22473]  INFO -- : Started POST "/users/sign_in" for 127.0.0.1 at 2014-10-24 15:29:26 +0200
+I, [2014-10-24T15:29:26.253469 #22473]  INFO -- : Processing by Devise::SessionsController#create as HTML
+I, [2014-10-24T15:29:26.253589 #22473]  INFO -- :   Parameters: {"utf8"=>"✓", "authenticity_token"=>"cAsB10d/ZJsCWlysJVfMY4M165F3ChAy7LhBICT4dng=", "user"=>{"email"=>"test1@marketingguru.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+I, [2014-10-24T15:29:26.516778 #22473]  INFO -- : Redirected to http://localhost:3000/
+I, [2014-10-24T15:29:26.516969 #22473]  INFO -- : Completed 302 Found in 263ms (ActiveRecord: 10.1ms)
+I, [2014-10-24T15:29:26.678524 #22473]  INFO -- : Started GET "/" for 127.0.0.1 at 2014-10-24 15:29:26 +0200
+I, [2014-10-24T15:29:26.680431 #22473]  INFO -- : Processing by ContactsController#index as HTML
+I, [2014-10-24T15:29:26.703709 #22473]  INFO -- :   Rendered contacts/index.html.erb within layouts/application (13.2ms)
+I, [2014-10-24T15:29:26.710103 #22473]  INFO -- :   Rendered layouts/_header.html.erb (0.5ms)
+I, [2014-10-24T15:29:26.710442 #22473]  INFO -- :   Rendered layouts/_footer.html.erb (0.0ms)
+I, [2014-10-24T15:29:26.710834 #22473]  INFO -- : Completed 200 OK in 30ms (Views: 22.4ms | ActiveRecord: 5.7ms)
+I, [2014-10-24T15:29:37.239911 #22473]  INFO -- : Started POST "/users/sign_in" for 127.0.0.1 at 2014-10-24 15:29:37 +0200
+I, [2014-10-24T15:29:37.241342 #22473]  INFO -- : Processing by Devise::SessionsController#create as HTML
+I, [2014-10-24T15:29:37.241435 #22473]  INFO -- :   Parameters: {"utf8"=>"✓", "authenticity_token"=>"3y2NpnXdpe3VtJFQwrqzK+GYf07hFUqiNlDYxeMlNmQ=", "user"=>{"email"=>"test2@marketingguru.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+I, [2014-10-24T15:29:37.474141 #22473]  INFO -- : Redirected to http://localhost:3000/
+I, [2014-10-24T15:29:37.474421 #22473]  INFO -- : Completed 302 Found in 233ms (ActiveRecord: 6.7ms)
+I, [2014-10-24T15:29:37.484349 #22473]  INFO -- : Started GET "/" for 127.0.0.1 at 2014-10-24 15:29:37 +0200
+I, [2014-10-24T15:29:37.486388 #22473]  INFO -- : Processing by ContactsController#index as HTML
+I, [2014-10-24T15:29:37.498214 #22473]  INFO -- :   Rendered contacts/index.html.erb within layouts/application (6.6ms)
+I, [2014-10-24T15:29:37.501370 #22473]  INFO -- :   Rendered layouts/_header.html.erb (0.3ms)
+I, [2014-10-24T15:29:37.501614 #22473]  INFO -- :   Rendered layouts/_footer.html.erb (0.0ms)
+I, [2014-10-24T15:29:37.501828 #22473]  INFO -- : Completed 200 OK in 15ms (Views: 6.6ms | ActiveRecord: 7.0ms)
+I, [2014-10-24T15:29:43.436512 #22473]  INFO -- : Started POST "/api/v1/meeting-start" for 127.0.0.1 at 2014-10-24 15:29:43 +0200
+I, [2014-10-24T15:29:43.438617 #22473]  INFO -- : Processing by Api::V1::MeetingController#start_session as */*
+I, [2014-10-24T15:29:43.438706 #22473]  INFO -- :   Parameters: {"email"=>"test1@marketingguru.com"}
+I, [2014-10-24T15:29:51.798191 #22473]  INFO -- : Completed 200 OK in 8359ms (Views: 0.3ms | ActiveRecord: 19.0ms)
+I, [2014-10-24T15:30:00.102894 #22473]  INFO -- : Started GET "/api/v1/meeting-join/1" for 127.0.0.1 at 2014-10-24 15:30:00 +0200
+I, [2014-10-24T15:30:00.107159 #22473]  INFO -- : Processing by Api::V1::MeetingController#join_session as */*
+I, [2014-10-24T15:30:00.107281 #22473]  INFO -- :   Parameters: {"channel"=>"1"}
+I, [2014-10-24T15:30:00.421583 #22473]  INFO -- : Completed 200 OK in 314ms (Views: 0.3ms | ActiveRecord: 1.3ms)
+I, [2014-10-24T15:30:00.448295 #22473]  INFO -- : Started GET "/meeting-channel/1" for 127.0.0.1 at 2014-10-24 15:30:00 +0200
+I, [2014-10-24T15:30:00.452533 #22473]  INFO -- : Processing by MeetingController#channel as HTML
+I, [2014-10-24T15:30:00.452623 #22473]  INFO -- :   Parameters: {"channel"=>"1"}
+I, [2014-10-24T15:30:00.473180 #22473]  INFO -- :   Rendered meeting/channel.html.erb within layouts/application (1.4ms)
+I, [2014-10-24T15:30:00.475596 #22473]  INFO -- :   Rendered layouts/_header.html.erb (1.7ms)
+I, [2014-10-24T15:30:00.475844 #22473]  INFO -- :   Rendered layouts/_footer.html.erb (0.0ms)
+I, [2014-10-24T15:30:00.476198 #22473]  INFO -- : Completed 200 OK in 23ms (Views: 15.7ms | ActiveRecord: 2.5ms)
+I, [2014-10-24T15:30:00.766824 #22473]  INFO -- : Started GET "/meeting-channel/1" for 127.0.0.1 at 2014-10-24 15:30:00 +0200
+I, [2014-10-24T15:30:00.768069 #22473]  INFO -- : Processing by MeetingController#channel as HTML
+I, [2014-10-24T15:30:00.768141 #22473]  INFO -- :   Parameters: {"channel"=>"1"}
+I, [2014-10-24T15:30:00.772639 #22473]  INFO -- :   Rendered meeting/channel.html.erb within layouts/application (0.3ms)
+I, [2014-10-24T15:30:00.779806 #22473]  INFO -- :   Rendered layouts/_header.html.erb (2.1ms)
+I, [2014-10-24T15:30:00.784423 #22473]  INFO -- :   Rendered layouts/_footer.html.erb (0.1ms)
+I, [2014-10-24T15:30:00.785039 #22473]  INFO -- : Completed 200 OK in 17ms (Views: 11.9ms | ActiveRecord: 1.2ms)
+I, [2014-10-24T15:30:04.170598 #22473]  INFO -- : Started POST "/pusher/auth" for 127.0.0.1 at 2014-10-24 15:30:04 +0200
+I, [2014-10-24T15:30:04.173926 #22473]  INFO -- : Processing by PusherController#auth as */*
+I, [2014-10-24T15:30:04.174010 #22473]  INFO -- :   Parameters: {"socket_id"=>"41174.964168", "channel_name"=>"private-meeting-1414157377"}
+I, [2014-10-24T15:30:04.180050 #22473]  INFO -- : Completed 200 OK in 6ms (Views: 0.3ms | ActiveRecord: 3.8ms)
+I, [2014-10-24T15:30:06.385612 #22473]  INFO -- : Started POST "/pusher/auth" for 127.0.0.1 at 2014-10-24 15:30:06 +0200
+I, [2014-10-24T15:30:06.386809 #22473]  INFO -- : Processing by PusherController#auth as HTML
+I, [2014-10-24T15:30:06.386876 #22473]  INFO -- :   Parameters: {"socket_id"=>"41310.935138", "channel_name"=>"private-meeting-1414157377"}
+I, [2014-10-24T15:30:06.393462 #22473]  INFO -- : Completed 200 OK in 6ms (Views: 0.2ms | ActiveRecord: 4.6ms)
+I, [2014-10-24T15:36:00.305610 #22644]  INFO -- : Started GET "/meeting-channel/1" for 127.0.0.1 at 2014-10-24 15:36:00 +0200
+I, [2014-10-24T15:36:00.383548 #22644]  INFO -- : Processing by MeetingController#channel as HTML
+I, [2014-10-24T15:36:00.383660 #22644]  INFO -- :   Parameters: {"channel"=>"1"}
+I, [2014-10-24T15:36:00.445390 #22644]  INFO -- :   Rendered meeting/channel.html.erb within layouts/application (11.3ms)
+I, [2014-10-24T15:36:00.489855 #22644]  INFO -- :   Rendered layouts/_header.html.erb (40.8ms)
+I, [2014-10-24T15:36:00.491226 #22644]  INFO -- :   Rendered layouts/_footer.html.erb (0.4ms)
+I, [2014-10-24T15:36:00.493732 #22644]  INFO -- : Completed 200 OK in 110ms (Views: 50.9ms | ActiveRecord: 15.1ms)
+I, [2014-10-24T15:36:04.120208 #22644]  INFO -- : Started GET "/meeting-channel/1" for 127.0.0.1 at 2014-10-24 15:36:04 +0200
+I, [2014-10-24T15:36:04.121797 #22644]  INFO -- : Processing by MeetingController#channel as HTML
+I, [2014-10-24T15:36:04.121918 #22644]  INFO -- :   Parameters: {"channel"=>"1"}
+I, [2014-10-24T15:36:04.130008 #22644]  INFO -- :   Rendered meeting/channel.html.erb within layouts/application (0.5ms)
+I, [2014-10-24T15:36:04.138359 #22644]  INFO -- :   Rendered layouts/_header.html.erb (3.1ms)
+I, [2014-10-24T15:36:04.140893 #22644]  INFO -- :   Rendered layouts/_footer.html.erb (0.1ms)
+I, [2014-10-24T15:36:04.141185 #22644]  INFO -- : Completed 200 OK in 19ms (Views: 10.1ms | ActiveRecord: 4.2ms)
+I, [2014-10-24T15:36:07.866476 #22644]  INFO -- : Started POST "/pusher/auth" for 127.0.0.1 at 2014-10-24 15:36:07 +0200
+I, [2014-10-24T15:36:07.870664 #22644]  INFO -- : Processing by PusherController#auth as */*
+I, [2014-10-24T15:36:07.876180 #22644]  INFO -- :   Parameters: {"socket_id"=>"41118.958510", "channel_name"=>"private-meeting-1414157377"}
+I, [2014-10-24T15:36:07.879161 #22644]  INFO -- : Completed 200 OK in 3ms (Views: 0.2ms | ActiveRecord: 0.5ms)
+I, [2014-10-24T15:36:09.757980 #22644]  INFO -- : Started POST "/pusher/auth" for 127.0.0.1 at 2014-10-24 15:36:09 +0200
+I, [2014-10-24T15:36:09.759718 #22644]  INFO -- : Processing by PusherController#auth as HTML
+I, [2014-10-24T15:36:09.759812 #22644]  INFO -- :   Parameters: {"socket_id"=>"41118.958524", "channel_name"=>"private-meeting-1414157377"}
+I, [2014-10-24T15:36:09.766870 #22644]  INFO -- : Completed 200 OK in 7ms (Views: 0.3ms | ActiveRecord: 0.7ms)

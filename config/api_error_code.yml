@@ -1,0 +1,14 @@
+Services:
+  Global:
+    success: 200
+    unkowns: 404
+    timeout: 300
+    api_key_invalid: 500
+    file_size: 700
+    formInputError: 504
+  Member:
+    login_error: 599
+    register_error: 600
+    profile_error: 601
+    register_user_exist: 602
+    invalid_user: 603

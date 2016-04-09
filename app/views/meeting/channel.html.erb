@@ -1,0 +1,157 @@
+<script type="text/javascript">
+  var apiKey    = "45039752";   //TokBox api key
+  var sessionId = "<%= @session_id %>";
+  var token     = "<%= @token %>";
+ 
+
+  var layoutContainer = document.getElementById("layoutContainer");
+
+    // Initialize the layout container and get a reference to the layout method
+  var layout = TB.initLayoutContainer(layoutContainer).layout;
+
+  // var layout = TB.initLayoutContainer(document.getElementById("layoutContainer"), {
+  //     maxRatio: 3/2,     // The narrowest ratio that will be used (default 2x3)
+  //     minRatio: 9/16,      // The widest ratio that will be used (default 16x9)
+  //     fixedRatio: false,  // If this is true then the aspect ratio of the video is maintained and minRatio and maxRatio are ignored (default false)
+  //     animate: false ,     // Whether to use jQuery animate when positioning (default false)
+  //     bigClass: "OT_big", // The class to add to elements that should be sized bigger
+  //     bigPercentage: 0.8,  // The maximum percentage of space the big ones should take up
+  //     bigFixedRatio: false, // fixedRatio for the big ones
+  //     bigMaxRatio: 3/2,     // The narrowest ratio to use for the big elements (default 2x3)
+  //     bigMinRatio: 9/16,     // The widest ratio to use for the big elements (default 16x9)
+  //     bigFirst: true        // Whether to place the big one in the top left (true) or bottom right
+  // });
+  //layout.layout()
+
+  var subscriber;
+
+  var session = TB.initSession(sessionId);
+  session.on("streamCreated", function(event){
+      subscriber = session.subscribe(event.stream, "layoutContainer", {
+          insertMode: "append"
+      });
+      layout();
+  }).connect(apiKey, token, function (err) {
+      if (!err) {
+          session.publish("publisherContainer");
+          layout();
+      }
+  });
+
+</script>
+
+<div class="container">
+
+  <div class="col-sm-12">
+    <div class="col-sm-6">
+      <button class="btn btn-danger pull-right" id="btn_end_meeting"><i class="fa fa-phone"></i> End Meeting</button>
+    </div>
+  </div>
+  <div class="col-sm-6">
+    <div class="chat-box">
+      <div class="scroller" style="height: 335px;" data-always-visible="1" data-rail-visible1="1">
+        <ul class="chats">
+          <li id="message_template">
+            <%= image_tag 'avatar.png', class: 'avatar img-responsive', alt: '' %>              
+            <div class="message">
+               <span class="arrow"></span>
+               <a href="#" class="name"></a>
+               <span class="datetime"></span>
+               <span class="body">
+               </span>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="chat-form">
+        <div class="input-cont">   
+           <input class="form-control" type="text" placeholder="Type a message here..." id="chat_message"/>
+        </div>
+        <div class="btn-cont"> 
+           <span class="arrow"></span>
+           <a class="btn blue icn-only" id="send_message"><i class="fa fa-check-square"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-6">
+    <div id="layoutContainer">
+      <div id="publisherContainer"></div>
+    </div>
+  </div>
+  <%= hidden_field_tag :channel , @channel %>
+</div>
+<script type="text/javascript">
+
+  var b_video_show = true;
+  
+  var pusher = new Pusher( 'a60be26a89bce85a752e', {
+    authEndpoint: "/pusher/auth"});
+
+  // var pusher = new Pusher('<%= ENV["PUSHER_KEY"]%>');
+  
+  var pusher_channel = pusher.subscribe('<%= @meeting.pusher_channel %>');
+  console.log('pusher_channel:', pusher_channel);
+  
+  pusher_channel.bind("client-new-message", function(data) {
+    console.log("client-new-message:");
+    console.log(data);    
+
+    msg_template = $('#message_template').html();
+    if($('.chats').find('li').length % 2 == 0){
+      msg_template = '<li class="out">' + msg_template + '</li>';
+    }else{
+      msg_template = '<li class="in">' + msg_template + '</li>';
+    }
+    $('.chats').append(msg_template);
+    $('.chats li').last().find('a.name').html(data);
+
+  });
+  
+  function send_message(){
+    str_msg = $('#chat_message').val();
+    if(str_msg.length == 0){
+      alert('Empty String');
+    }else{
+      $('#chat_message').val('');
+      msg_template = $('#message_template').html();
+      if($('.chats').find('li').length % 2 == 0){
+        msg_template = '<li class="out">' + msg_template + '</li>';
+      }else{
+        msg_template = '<li class="in">' + msg_template + '</li>';
+      }
+      $('.chats').append(msg_template);
+      $('.chats li').last().find('a.name').html(str_msg);      
+
+      triggered = pusher_channel.trigger('client-new-message', str_msg);
+      if(!triggered){
+        alert('There is an error in Network Connection.');
+      }
+      
+    }
+  }
+  $(document).ready(function(){
+    $('#send_message').on('click', function(){
+      send_message();
+    });
+    $('#chat_message').keypress(function(e) {
+        if(e.which == 13) {
+          send_message();
+        }
+    });
+    $('#btn_end_meeting').on('click', function(){
+      channel = $('#channel').val();
+      $.ajax({
+        type: "GET",
+        url: "/api/v1/meeting-end/"+channel,        
+        success: function(data) {          
+          window.location.href = '/';
+        },
+        error: function(data) {          
+          return false;
+        }
+      });
+    })
+  });
+
+</script>

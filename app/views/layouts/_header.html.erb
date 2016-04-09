@@ -1,0 +1,17 @@
+
+<div class="container">
+  <header>
+    <div class="row">
+      <h2> MarketingGuru </h2>
+      <span><%= "Welcome #{current_user.name}" if current_user %></span>
+    </div>
+    <% if current_user %>
+    <div class="row">
+      <div class="col-sm-8">
+        <%= link_to 'Sign out', destroy_user_session_path, :method => :delete, class: 'pull-right btn btn-danger' 
+        %>
+      </div>
+    </div>
+    <% end %>
+  </header>
+</div>

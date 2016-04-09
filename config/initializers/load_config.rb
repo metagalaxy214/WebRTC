@@ -1,0 +1,1 @@
+API_CODE_ERRORS = YAML.load_file("#{Rails.root}/config/api_error_code.yml")#will load the feelike env local configs

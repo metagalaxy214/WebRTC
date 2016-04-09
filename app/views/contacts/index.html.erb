@@ -1,0 +1,81 @@
+
+<div class="container">
+
+  <h3 class="page-title"> Contacts </h3>
+
+  <div class="col-sm-8">
+    <div class="row">
+      <div class="col-sm-12">
+        <button type="button" class="btn btn-success disabled pull-right" id="btn_call"><i class="fa fa-phone"></i> Call</button>
+        <button type="button" class="btn btn-success disabled pull-right" id="btn_accept"><i class="fa fa-video-camera"></i> Accept</button>
+      </div>
+    </div>
+    <div class="row">
+      <table class="table table-bordered" id="all_contacts">      
+        <thead>
+          <tr>
+            <td>#</td>
+            <td>Name</td>
+            <td>Email</td>
+            <td>Sign in at</td></tr>
+        </thead>
+        <tbody>
+          <% if @users.count > 0 %>
+            <% @users.each_with_index do |user, index| %>
+              <tr data-contact-email="<%= user.email%>" data-contact-name="<%= user.name %>" class="contact-row">
+                <td><%= index+1 %></td>
+                <td><%= user.name %></td>
+                <td><%= user.email %></td>
+                <td><%= user.current_sign_in_at ? user.current_sign_in_at.strftime("at %m/%d %I:%M%p") : '' %></td>
+              </tr>
+            <% end %>
+          <% else %>
+            <tr><td colspan="3"> No Users</td></tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  
+  <%= hidden_field_tag :channel, '' %>
+  <%= hidden_field_tag :my_email, current_user.email %>
+  <!-- Modal -->
+  <div class="modal fade" id="calling_modal" tabindex="-1" role="dialog" aria-labelledby="calling_modal" aria-hidden="true">
+    
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">          
+          <h4 class="modal-title">Calling</h4>
+        </div>
+        <div class="modal-body">
+          Waiting for 
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal" id="cancel_calling">Cancel</button>
+        </div>
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+  </div><!-- /.modal -->
+
+
+  <!-- Calling Error Modal -->
+
+  <div class="modal fade" id="joining_modal" tabindex="-1" role="dialog" aria-labelledby="joining_modal" aria-hidden="true">
+    
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+          <h4 class="modal-title">Joining...</h4>
+        </div>
+        <div class="modal-body">
+          Please wait for a moment ...
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal" id="cancel_calling">Cancel</button>
+        </div>
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+  </div><!-- /.modal -->
+
+</div>

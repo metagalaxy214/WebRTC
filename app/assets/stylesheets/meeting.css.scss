@@ -1,0 +1,97 @@
+// Place all the styles related to the meeting controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+header {
+  padding: 30px;
+}
+
+
+
+#layoutContainer {
+  float: left;
+}
+
+.chat-form {
+    background-color: #e9eff3;
+    clear: both;
+    margin-top: 15px;
+    overflow: hidden;
+    padding: 10px;
+}
+.chats {
+    margin: -15px 0 0;
+    padding: 0;
+}
+.chats li {
+    font-size: 12px;
+    list-style: none outside none;
+    margin: 10px auto;
+    padding: 5px 0;
+}
+.chats li.in img.avatar {
+    float: left;
+    margin-right: 10px;
+}
+.chats li.out img.avatar {
+    float: right;
+    margin-left: 10px;
+}
+
+.chats li img.avatar {
+    border-radius: 50% !important;
+    height: 45px;
+    width: 45px;
+}
+.img-responsive {
+    display: block;
+    height: auto;
+    max-width: 100%;
+}
+.chats li.in .message {
+    background: none repeat scroll 0 0 #fafafa;
+    border-left: 2px solid #35aa47;
+    margin-left: 65px;
+    text-align: left;
+}
+.chats li.out .message {
+    background: none repeat scroll 0 0 #fafafa;
+    border-right: 2px solid #da4a38;
+    margin-right: 65px;
+    text-align: right;
+}
+.chats li .message {
+    display: block;
+    padding: 5px;
+    position: relative;
+}
+
+.chat-form .btn-cont {
+    float: right;
+    margin-top: -42px;
+    position: relative;
+    width: 39px;
+}
+.chat-form .btn-cont .arrow {
+    border-bottom: 8px solid transparent;
+    border-right: 8px solid #4d90fe;
+    border-top: 8px solid transparent;
+    box-sizing: border-box;
+    position: absolute;
+    right: 39px;
+    top: 17px;
+}
+.chat-form .btn-cont .btn {
+    margin-top: 8px;
+}
+.btn > i {
+    font-size: 14px;
+}
+.btn.blue {
+    background-color: #4d90fe;
+    color: white;
+    text-shadow: none;
+}
+#message_template {
+  display: none;
+}
